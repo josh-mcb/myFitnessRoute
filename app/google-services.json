@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "121174821657",
+    "firebase_url": "https://myfitnessroute-8fd10.firebaseio.com",
+    "project_id": "myfitnessroute-8fd10",
+    "storage_bucket": "myfitnessroute-8fd10.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:121174821657:android:0902f58d1539ce1014d388",
+        "android_client_info": {
+          "package_name": "com.example.androidgrouptask"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "121174821657-2q1pmmaflqntih2eire0r2dfe0j5mu3e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.androidgrouptask",
+            "certificate_hash": "33897d01c12f2fab94556e71d484b8853f4cc9ee"
+          }
+        },
+        {
+          "client_id": "121174821657-g99q47vmd87ddli7kgn7044df3cf6a87.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJRY6jqdtYw4A1_dLdqIBelyeZLGzIZjQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "121174821657-g99q47vmd87ddli7kgn7044df3cf6a87.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
