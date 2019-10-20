@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         String email = ((EditText) findViewById(R.id.emailInputTB)).getText().toString();
         String password = ((EditText) findViewById(R.id.passwordInputTB)).getText().toString();
         String confirmPassword1 = ((EditText) findViewById(R.id.confirmPasswordTB)).getText().toString();
-
+        // empty validation
         if(TextUtils.isEmpty(email)) {
             Toast.makeText(getApplicationContext(),  "Please Enter an Email!", Toast.LENGTH_LONG).show();
             return;
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Passwords do not match!", Toast.LENGTH_LONG).show();
             return;
         }
-
+            // create user and add to firebase
             progressBar.setVisibility(View.VISIBLE);
             mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
                 @Override
@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
             noAccountRegisterBtn.setVisibility(View.VISIBLE);
             cancelRegistration.setVisibility(View.INVISIBLE);
         }
-
+    // login user from firebase
     public void loginUser(View view) {
 
         String email = ((EditText) findViewById(R.id.emailInputTB)).getText().toString();
