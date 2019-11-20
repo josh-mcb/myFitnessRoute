@@ -1,19 +1,23 @@
 package com.example.androidgrouptask;
 
+import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.FragmentActivity;
+
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.graphics.Camera;
 import android.location.Address;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.location.LocationProvider;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
-import androidx.core.app.ActivityCompat;
-import androidx.fragment.app.FragmentActivity;
-
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -115,7 +119,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(this, new String[]{
-                Manifest.permission.ACCESS_COARSE_LOCATION
+                android.Manifest.permission.ACCESS_COARSE_LOCATION
             },REQUEST_COARSE_ACCESS);
             return;
         } else {
@@ -125,10 +129,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             lm.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
         }
 
-        // Add a marker in Derry and move the camera
-//        LatLng Derry = new LatLng(55.000717, -7.309253);
-//        mMap.addMarker(new MarkerOptions().position(Derry).title("Derry City"));
-//        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(Derry, 12.0f));
+        // Add a marker in start and end marker and move the camera
+        LatLng startPoint = new LatLng(55.020045, -7.308721);
+        LatLng endPoint = new LatLng(55.010499, -7.279066);
+        mMap.addMarker(new MarkerOptions().position(startPoint).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)).title("Start Point"));
+        mMap.addMarker(new MarkerOptions().position(endPoint).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)).title("End Point"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(startPoint, 11.0f));
 
         mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
 
