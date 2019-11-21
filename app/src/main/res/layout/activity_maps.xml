@@ -1,9 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:map="http://schemas.android.com/apk/res-auto"
+
+<!--<LinearLayout-->
+<!--    xmlns:map="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="fill_parent"-->
+<!--    android:layout_height="fill_parent"-->
+<!--    android:orientation="vertical" >-->
+
+<!--    <fragment-->
+<!--        android:id="@+id/map"-->
+<!--        android:name="com.google.android.gms.maps.SupportMapFragment"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="550dp"-->
+<!--        tools:context=".MapsActivity" />-->
+
+
+
+<!--</LinearLayout>-->
+
+<LinearLayout xmlns:map="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/map"
-    android:name="com.google.android.gms.maps.SupportMapFragment"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="451dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="550dp"
+            tools:context=".MapsActivity" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+    android:id="@+id/relativeLayout1"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MapsActivity" />
+    android:layout_height="wrap_content"
+    android:layout_weight="1" >
+
+        <Button
+            android:id="@+id/endBtn"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:text="@string/end_Button" />
+
+        <Button
+            android:id="@+id/startBtn"
+            android:layout_width="match_parent"
+            android:layout_height="59dp"
+            android:text="@string/start_Button" />
+
+        <Button
+            android:id="@+id/scanBtn"
+            android:layout_width="232dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/endBtn"
+            android:layout_gravity="center"
+            android:foregroundGravity="center_horizontal"
+            android:layout_centerHorizontal="true"
+            android:text="@string/scan_Button" />
+
+    </RelativeLayout>
+
+</LinearLayout>
